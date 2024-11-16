@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ConsoleApp888
@@ -10,7 +11,7 @@ namespace ConsoleApp888
     {
         public Gender gender;
         public TimeFrame Period;
-        public string name;
+        private string name;
         public string familya;
         public DateTime dateofbirth;
 
@@ -24,9 +25,44 @@ namespace ConsoleApp888
         {
             return $"Имя: {name}, фамилия: {familya} день рождения {dateofbirth}";
         }
-        public string GetNmae()
+        public string GetName()
         {
             return name;
+        }
+        public void SetName(string value)
+        {
+            if (Regex.IsMatch(value, "^[А-ЯЁ][а-яё]{2,}$"))
+            {
+                name = value;
+            }
+            ////else
+            ////{
+            ////    throw new Exception("Имя не соответствует формату");
+            ////}
+        }
+        public  Gender GetGender()
+        {
+            return gender;
+        }
+        public TimeFrame GetTimeFrame()
+        {
+            return Period;
+        }
+        public string Getfamilya()
+        {
+            return familya;
+        }
+        public void Setfamilya(string value)
+        {
+            familya = value;
+        }
+        public DateTime Getdateofbirth()
+        {
+            return dateofbirth;
+        }
+        public void Setdateofbirth(DateTime value)
+        {
+            dateofbirth = value;
         }
     }
 }

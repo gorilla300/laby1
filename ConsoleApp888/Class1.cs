@@ -8,7 +8,7 @@ namespace ConsoleApp888
 {
     enum Gender
     {
-        Male,
+        
         Female
     }
 }
